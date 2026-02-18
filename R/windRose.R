@@ -952,7 +952,8 @@ windRose <- function(
         seq((myby + off.set), (mymax + off.set), myby) *
           cos(pi * angle.scale / 180),
         paste(seq(myby, mymax, by = myby), stat.unit, sep = ""),
-        cex = 0.7
+        cex = 0.7, 
+        col = "white"
       )
 
       # annotations
@@ -1013,8 +1014,8 @@ windRose <- function(
       }
 
       ## add axis lines
-      lsegments(-upper, 0, upper, 0)
-      lsegments(0, -upper, 0, upper)
+      lsegments(-upper, 0, upper, 0, col = "white")
+      lsegments(0, -upper, 0, upper, col = "white")
 
       if (!is.na(ws2) & !is.na(wd2)) {
         axislabs <- c("0", "+90", paste0("+/-", 180), "-90")
@@ -1024,10 +1025,10 @@ windRose <- function(
         s_adj <- 0.07
       }
 
-      ltext(upper * -1 * 0.95, 0.07 * upper, axislabs[4], cex = 0.7)
-      ltext(s_adj * upper, upper * -1 * 0.95, axislabs[3], cex = 0.7)
-      ltext(0.07 * upper, upper * 0.95, axislabs[1], cex = 0.7)
-      ltext(upper * 0.95, 0.07 * upper, axislabs[2], cex = 0.7)
+      ltext(upper * -1 * 0.95, 0.07 * upper, axislabs[4], cex = 0.7, col = "white")
+      ltext(s_adj * upper, upper * -1 * 0.95, axislabs[3], cex = 0.7, col = "white")
+      ltext(0.07 * upper, upper * 0.95, axislabs[1], cex = 0.7, col = "white")
+      ltext(upper * 0.95, 0.07 * upper, axislabs[2], cex = 0.7, col = "white")
     },
     legend = legend
   )
